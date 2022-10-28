@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Įrašai{% endblock %}
+
+{% block content %}
+
+
+<h1>{{ post.title }}</h1>
+<small>{{ post.created }}</small>
+<p>{{ post.body }}</p>
+<p>Likes: {{ post.likes }}</p>
+<h5>Comments:</h5>
+{% for comment in post.comments %}
+<p>{{ comment }}</p>
+{% endfor %}
+{% endblock %}

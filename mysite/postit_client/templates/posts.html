@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Įrašai{% endblock %}
+
+{% block content %}
+
+{% for post in posts %}
+
+<a href="{% url 'post' post.id %}">
+    <h1>{{ post.title }}</h1>
+</a>
+<small>{{ post.created }}</small>
+<p>Likes: {{ post.likes }}</p>
+<p>{{ post.body }}</p>
+<hr>
+
+{% endfor %}
+{% endblock %}
